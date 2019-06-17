@@ -1,5 +1,5 @@
 # WriteXLSX
-## Excel OpenXML editing all-free Javascript package
+## All-free Excel editing Javascript package
 
 This package and it's docs are under initial development.\
 It's objective is to become the most complete excel package for JavaScript.
