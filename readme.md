@@ -5,7 +5,7 @@ This package and it's docs are under initial development.\
 It's objective is to become the most complete excel package for JavaScript.
 
 ## **Install:**
-> `npm install writexlsx`
+`npm install writexlsx`
 
 ## **Dependencies:**
 

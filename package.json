@@ -1,0 +1,28 @@
+{
+  "name": "writexlsx",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xlsx",
+    "xls",
+    "excel",
+    "openxml",
+    "oxml",
+    "sheet",
+    "workbook",
+    "spreadsheet",
+    "worksheet"
+  ],
+  "author": "Fernando Siles",
+  "license": "MIT",
+  "dependencies": {
+    "elementtree": "^0.1.7",
+    "fs": "0.0.1-security",
+    "jszip": "^3.2.1"
+  },
+  "repository": "github:fdearaujosiles/WriteXLSX.js"
+}
