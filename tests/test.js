@@ -1,5 +1,13 @@
 const WriteXLSX = require('../lib/Workbook')
 
+
+let xls = new WriteXLSX();
+console.log('\n', xls.sharedStrings)
+xls.sheet('Sheet1').cell('A1').value = 'NewText';
+console.log('\n', xls.sharedStrings)
+console.log('\n', xls.sheet(0).cell('A1').et)
+
+
 WriteXLSX.read("../out.xlsx").then(xls => {
 
     formattingStyle = {
@@ -29,17 +37,13 @@ WriteXLSX.read("../out.xlsx").then(xls => {
 
     console.log('\n')
 
-    console.log(sheet.cell('A2').value, '\n', sheet.cell('A2'))
-    
-
-    sheet.cell('A2').value = '    ="Novo texto"'
-    
-    console.log(sheet.cell('A2').value, '\n', sheet.cell('A2'))
+    console.log(sheet.cells.map(cell => cell.value))
+    sheet.cell('a3').value = 64
+    console.log(sheet.cells.map(cell => cell.value))
     
     console.log('\n')
     
-    xls.sheet('Sheet1').range('A1:B4').conditionalFormatting('"Name"', formattingStyle);
-    xls.sheet('Sheet1').range('A1:B4').conditionalFormatting('"Fernando"', formattingStyle);
-
+    // xls.sheet('Sheet1').range('A1:B4').conditionalFormatting('"Name"', formattingStyle);
+    
     xls.save('OutTest1.xlsx', () => console.log('saved'))
 }).catch(err => console.log(err));

@@ -1,8 +1,8 @@
 {
-  "name": "writexlsx",
-  "version": "0.1.0",
+  "name": "xlwriter",
+  "version": "0.1.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/Workbook.js",
   "scripts": {
     "test": "node tests/test.js"
   },
@@ -24,5 +24,5 @@
     "fs": "0.0.1-security",
     "jszip": "^3.2.1"
   },
-  "repository": "github:fdearaujosiles/WriteXLSX"
+  "repository": "github:fdearaujosiles/xlwriter"
 }
