@@ -1,8 +1,7 @@
-const WriteXLSX = require('./lib/Workbook')
+const WriteXLSX = require('../lib/Workbook')
 
 WriteXLSX.read("../out.xlsx").then(xls => {
 
-    // console.log(fs.readFileSync('assets/out/xl/workbook.xml').toString())
     formattingStyle = {
         font: {
             b:true, 
@@ -26,11 +25,21 @@ WriteXLSX.read("../out.xlsx").then(xls => {
     };
 
     let sheet = xls.sheet('Sheet1');
+    let joy = xls.sheet('@joy');
 
-    console.log(sheet.cells)
+    console.log('\n')
+
+    console.log(sheet.cell('A2').value, '\n', sheet.cell('A2'))
     
-    // xls.sheet('Sheet1').conditionalFormatting('A1:B4', '"Name"', formattingStyle);
-    // xls.sheet('Sheet1').conditionalFormatting('A1:B4', '"Fernando"', formattingStyle);
+
+    sheet.cell('A2').value = '    ="Novo texto"'
+    
+    console.log(sheet.cell('A2').value, '\n', sheet.cell('A2'))
+    
+    console.log('\n')
+    
+    xls.sheet('Sheet1').range('A1:B4').conditionalFormatting('"Name"', formattingStyle);
+    xls.sheet('Sheet1').range('A1:B4').conditionalFormatting('"Fernando"', formattingStyle);
 
     xls.save('OutTest1.xlsx', () => console.log('saved'))
 }).catch(err => console.log(err));
